@@ -20,9 +20,9 @@ function Navbar() {
             HOME
           </a>
           <a
-            href="/items"
+            href="/AllItems"
             className={`text-gray-600 hover:text-teal-600 ${
-              location.pathname === '/items' ? 'border-b-2 border-teal-600' : ''
+              location.pathname === '/AllItems' ? 'border-b-2 border-teal-600' : ''
             }`}
           >
             ALL ITEMS

@@ -7,6 +7,7 @@ import fujifilm from '../../assets/Images/fijifilm.png';
 import { useNavigate } from "react-router-dom";
 import Product from '../Product/Product';
 import LearnBanner from '../LearnBanner/LearnBanner';
+import Footer from '../Footer/Footer';
 
 function Home() {
     const navigate = useNavigate(); // Create a navigate function from useNavigate
@@ -79,9 +80,10 @@ function Home() {
                 <Product/>
             </section>
 
-            <section className='w-[80%] mx-auto'>
+            <section className='w-[80%] mx-auto mt-[20vh]'>
                 <LearnBanner/>
             </section>
+            
 
 
 

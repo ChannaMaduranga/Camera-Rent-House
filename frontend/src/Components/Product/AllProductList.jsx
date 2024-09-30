@@ -82,6 +82,14 @@ const itemsData = [
         perDay: "Per day",
         image: air2,
     },
+    {
+        id: 10,
+        category: "Light",
+        name: "GODOX V1",
+        price: "Rs 2000",
+        perDay: "Per day",
+        image: godoxv1,
+    },
 
 
     // Add more items as needed
@@ -89,7 +97,7 @@ const itemsData = [
 
 const categories = ["All", "Combo Pack", "Camera", "Lens", "Light", "Drone"];
 
-const Product = () => {
+const AllProductList = () => {
 
     const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -147,14 +155,10 @@ const Product = () => {
                 ))}
             </div>
 
-            {/* More Button */}
-            <div className="flex justify-center mt-8">
-                <button onClick={handleRentClick} className="bg-[#57ad9e] hover:bg-secondary-main text-white px-8 py-2 rounded">
-                    more
-                </button>
-            </div>
+            {/* next Buttons */}
+            
         </div>
     );
 };
 
-export default Product;
+export default AllProductList;
