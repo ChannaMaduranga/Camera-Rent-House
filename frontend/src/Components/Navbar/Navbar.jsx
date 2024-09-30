@@ -6,9 +6,9 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow-lg py-4">
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="container mx-auto px-6 md:w-[80%] md:px-0 flex items-center justify-between">
         <div className="text-lg font-bold text-teal-600">
-          Camera Rent House
+          <a href='/'>Camera Rent House</a>
         </div>
         <div className="hidden md:flex space-x-8 font-poppins">
           <a
