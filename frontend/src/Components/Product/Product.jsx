@@ -87,7 +87,7 @@ const itemsData = [
     // Add more items as needed
 ];
 
-const categories = ["All", "Combo Pack", "Camera", "Lens", "Light", "Drone"];
+const categories = ["All", "Camera", "Lens", "Light", "Drone"];
 
 const Product = () => {
 
@@ -104,17 +104,18 @@ const Product = () => {
 
     const handleRentClick = () => {
         navigate("/AllItems");
-        }
+
+    }
 
     return (
-        <div className="w-[80%] mx-auto mt-4">
+        <div className="md:w-[80%] w-[95%] mx-auto mt-4">
             {/* Category Buttons */}
-            <div className="flex justify-start  space-x-4 mb-6">
+            <div className="flex justify-start  space-x-4 mb-6 w-full">
                 {categories.map((category) => (
                     <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`border px-4 py-2 rounded ${selectedCategory === category ? "bg-secondary-main text-white" : ""
+                        className={`border px-4 py-2 sm:py-2 rounded text-xs sm:text-md ${selectedCategory === category ? "bg-secondary-main text-white" : ""
                             }`}
                     >
                         {category}
@@ -123,7 +124,7 @@ const Product = () => {
             </div>
 
             {/* Product Cards */}
-            <div className="grid grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {filteredItems.map((item) => (
                     <div key={item.id} className="border p-4 rounded shadow-lg">
 
@@ -140,15 +141,20 @@ const Product = () => {
                                 <div className="text-end font-sm">{item.perDay}</div>
                             </div>
                         </div>
-                        <button className="bg-white text-secondary-main w-full py-2 mt-2 rounded border-secondary-main border-2 hover:bg-secondary-main hover:text-white">
-                            Call Now
-                        </button>
+                        <a href="https://wa.me/message/ZQBFTQ25FYECF1"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <button className="bg-white text-secondary-main w-full py-2 mt-2 rounded border-secondary-main border-2 hover:bg-secondary-main hover:text-white">
+                                Call Now
+                            </button>
+                        </a>
                     </div>
                 ))}
             </div>
 
             {/* More Button */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-16">
                 <button onClick={handleRentClick} className="bg-[#57ad9e] hover:bg-secondary-main text-white px-8 py-2 rounded">
                     more
                 </button>

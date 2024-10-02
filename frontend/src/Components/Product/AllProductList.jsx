@@ -109,7 +109,7 @@ const itemsData = [
   // Add more items if needed
 ];
 
-const categories = ["All", "Combo Pack", "Camera", "Lens", "Light", "Drone"];
+const categories = ["All",  "Camera", "Lens", "Light", "Drone"];
 
 const AllProductList = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -140,24 +140,23 @@ const AllProductList = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto mt-4">
-      {/* Category Buttons */}
-      <div className="flex justify-start space-x-4 mb-6">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`border px-4 py-2 rounded ${
-              selectedCategory === category ? "bg-secondary-main text-white" : ""
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+    <div className="md:w-[80%] w-[95%] mx-auto mt-4">
+            {/* Category Buttons */}
+            <div className="flex justify-start  space-x-4 mb-6 w-full">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`border px-4 py-2 sm:py-2 rounded text-xs sm:text-md ${selectedCategory === category ? "bg-secondary-main text-white" : ""
+                            }`}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
 
       {/* Product Cards */}
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {currentItems.map((item) => (
           <div key={item.id} className="border p-4 rounded shadow-lg">
             <div className="relative">
@@ -173,12 +172,14 @@ const AllProductList = () => {
                 <div className="text-end font-sm">{item.perDay}</div>
               </div>
             </div>
-            <button
-              className="bg-white text-secondary-main w-full py-2 mt-2 rounded border-secondary-main border-2 hover:bg-secondary-main hover:text-white"
-              onClick={handleRentClick}
-            >
-              Call Now
-            </button>
+            <a href="https://wa.me/message/ZQBFTQ25FYECF1"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              <button className="bg-white text-secondary-main w-full py-2 mt-2 rounded border-secondary-main border-2 hover:bg-secondary-main hover:text-white">
+                Call Now
+              </button>
+            </a>
           </div>
         ))}
       </div>

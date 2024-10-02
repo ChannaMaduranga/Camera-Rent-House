@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <div className="flex justify-center items-center pt-16 ">
       <form className="w-full max-w-2xl ">
-        <div className="flex flex-row  mb-6 space-x-4">
+        <div className="flex flex-row  md:mb-6 space-x-4">
           {/* Name Input */}
           <div className="w-full md:w-1/2  mb-6 md:mb-0">
             <input
