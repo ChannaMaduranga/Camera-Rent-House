@@ -4,9 +4,9 @@ import { FaApple } from "react-icons/fa";
 
 function SignIn() {
     return (
-        <div className=''>
-            <div className='font-outfit mx-auto w-[80%] p-16  flex justify-center items-center  '>
-                <div className='border-2 p-8 rounded-lg py-16 border-secondary-main'>
+        <div className='h-screen '>
+            <div className='font-outfit my-16 md:h-[100vh] mx-auto md:w-[60%] w-[90%] sm:w-[70%] lg:w-[40%] md:p-16 p-4 flex justify-center   '>
+                <div className='border-2 p-4 md:p-8  rounded-lg py-8 md:py-16 w-full  border-secondary-main'>
                     <h2 className='text-2xl md:text-2xl font-semibold mb-1'>Welcome back!</h2>
                     <p>Enter your Credentials to access your account</p>
 

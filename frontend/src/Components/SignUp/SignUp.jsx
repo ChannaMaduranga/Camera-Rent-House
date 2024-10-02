@@ -5,7 +5,7 @@ import { FaApple } from "react-icons/fa";
 function SignUp() {
   return (
     <div className=''>
-    <div className='font-outfit mx-auto w-[80%] p-8  flex justify-center items-center  '>
+    <div className='font-outfit my-8 md:h-[100vh] mx-auto md:w-[60%] w-[90%] sm:w-[70%] lg:w-[40%] md:p-16 p-4 flex justify-center   '>
         <div className='border-2 p-8 rounded-lg py-8 border-secondary-main'>
             <h2 className='text-2xl md:text-2xl font-semibold mb-1'>Get Started Now</h2>
             <p>Enter your Credentials to create your account</p>
