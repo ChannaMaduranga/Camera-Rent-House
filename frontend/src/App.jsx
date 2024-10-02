@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home';
@@ -11,8 +11,10 @@ import 'aos/dist/aos.css';
 import WatchVideoPage from './Components/LearnBanner/WatchVideoPage';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
+import Loading from './Components/Loading/Loading';
 
 function App() {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -20,7 +22,19 @@ function App() {
     });
   }, []);
 
-  return (
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a loading delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  return loading ? (
+    <Loading />
+  ) : (
     <Router>
       <div>
         <Navbar /> {/* Navbar inside Router */}
