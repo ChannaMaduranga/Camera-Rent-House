@@ -1,6 +1,6 @@
-import React, {useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Change to HashRouter
 import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
 import About from './Components/About/About';
@@ -31,7 +31,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-
   return loading ? (
     <Loading />
   ) : (
@@ -52,6 +51,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
