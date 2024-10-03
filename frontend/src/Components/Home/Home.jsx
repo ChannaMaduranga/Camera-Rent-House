@@ -19,7 +19,7 @@ function Home() {
     return (
         <div>
             {/* Banner Section */}
-            <section className="bg-[#028F76] py-6 sm:py-12 md:py-16 w-[95%] md:w-[80%] mx-auto my-8 rounded-2xl">
+            <section className="bg-[#028F76] py-6 sm:py-12 md:py-8 w-[95%] md:w-[80%] mx-auto my-8 rounded-2xl">
                 <div className="container relative mx-auto  md:px-12 flex  md:flex-row items-center">
                     <div className="w-3/4 px-4 sm:px-8 md:px-4 md:w-3/4 text-white absolute top-0 sm:top-[5%] lg:top-[10%] xl:top-[20%] " >
                         <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4" data-aos="fade-up">
