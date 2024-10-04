@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Change to HashRouter
+import { BrowserRouter , Route, Routes } from 'react-router-dom'; // Change to HashRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -13,7 +13,7 @@ import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import Loading from './Components/Loading/Loading';
 
-function App() {
+function AppContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function App() {
   return loading ? (
     <Loading />
   ) : (
-    <Router>
+    
       <div>
         <Navbar /> {/* Navbar inside Router */}
         <Routes>
@@ -48,7 +48,15 @@ function App() {
         </Routes>
         <Footer/>
       </div>
-    </Router>
+   
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter  >
+      <AppContent />
+    </BrowserRouter>
   );
 }
 
