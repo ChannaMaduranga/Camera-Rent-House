@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter , Route, Routes } from 'react-router-dom'; // Change to HashRouter
+import { HashRouter, BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -18,7 +18,7 @@ function AppContent() {
 
   useEffect(() => {
     AOS.init({
-      duration: 2000,  // Duration of the animation in ms (optional)
+      duration: 2000,
     });
   }, []);
 
@@ -26,7 +26,7 @@ function AppContent() {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simulate a loading delay
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,29 +34,29 @@ function AppContent() {
   return loading ? (
     <Loading />
   ) : (
-    
-      <div>
-        <Navbar /> {/* Navbar inside Router */}
-        <Routes>
-          <Route path="/" element={<Home />} /> {/* Define routes here */}
-          <Route path="/AllItems" element={<AllItems/>}/>
-          <Route path="/About" element={<About/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
-          <Route path="/Videos" element={<WatchVideoPage/>}/>
-          <Route path="/Signin" element={<SignIn/>}/>
-          <Route path="/Signup" element={<SignUp/>}/>
-        </Routes>
-        <Footer/>
-      </div>
-   
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/AllItems" element={<AllItems />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Videos" element={<WatchVideoPage />} />
+        <Route path="/Signin" element={<SignIn />} />
+        <Route path="/Signup" element={<SignUp />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
 function App() {
+  const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter; // Use HashRouter in production
+
   return (
-    <BrowserRouter  >
+    <Router>
       <AppContent />
-    </BrowserRouter>
+    </Router>
   );
 }
 
