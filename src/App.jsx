@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -17,9 +17,7 @@ function AppContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
+    AOS.init({ duration: 2000 });
   }, []);
 
   useEffect(() => {
@@ -51,7 +49,7 @@ function AppContent() {
 }
 
 function App() {
-  const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter; // Use HashRouter in production
+  const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter; // Use HashRouter for production, BrowserRouter for development
 
   return (
     <Router>
