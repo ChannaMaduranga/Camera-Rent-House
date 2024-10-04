@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  // Use BrowserRouter
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';  // Import both routers
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -7,7 +7,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 import WatchVideoPage from './Components/LearnBanner/WatchVideoPage';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
@@ -49,11 +49,12 @@ function AppContent() {
 }
 
 function App() {
-  // Dynamically set basename for GitHub Pages
-  const basename = process.env.NODE_ENV === 'production' ? '/Camera-Rent-House' : '/';
+  // Dynamically choose HashRouter for GitHub Pages, BrowserRouter for localhost
+  const isGithubPages = process.env.NODE_ENV === 'production';
+  const Router = isGithubPages ? HashRouter : BrowserRouter;
 
   return (
-    <Router basename={basename}>  {/* Use dynamic basename */}
+    <Router>
       <AppContent />
     </Router>
   );
