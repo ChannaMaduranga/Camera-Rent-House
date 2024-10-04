@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';  // Import both routers
+import { HashRouter, Route, Routes } from 'react-router-dom';  // Use HashRouter instead of BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -49,12 +49,10 @@ function AppContent() {
 }
 
 function App() {
-  const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter;  // Switch router based on environment
-
   return (
-    <Router>
+    <HashRouter>  {/* Use HashRouter for GitHub Pages */}
       <AppContent />
-    </Router>
+    </HashRouter>
   );
 }
 
