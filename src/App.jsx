@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';  // Use BrowserRouter
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';  // Use BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -49,10 +49,13 @@ function AppContent() {
 }
 
 function App() {
+  // Dynamically set basename for GitHub Pages
+  const basename = process.env.NODE_ENV === 'production' ? '/Camera-Rent-House' : '/';
+
   return (
-    <BrowserRouter basename="/Camera-Rent-House"> {/* Use basename for GitHub Pages */}
+    <Router basename={basename}>  {/* Use dynamic basename */}
       <AppContent />
-    </BrowserRouter>
+    </Router>
   );
 }
 
