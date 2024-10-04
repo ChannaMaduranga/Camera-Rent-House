@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';  // Use HashRouter instead of BrowserRouter
+import { BrowserRouter, Route, Routes } from 'react-router-dom';  // Use BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -50,9 +50,9 @@ function AppContent() {
 
 function App() {
   return (
-    <HashRouter>  {/* Use HashRouter for GitHub Pages */}
+    <BrowserRouter basename="/Camera-Rent-House"> {/* Use basename for GitHub Pages */}
       <AppContent />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
