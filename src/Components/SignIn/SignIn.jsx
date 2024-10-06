@@ -1,6 +1,7 @@
 import React from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function SignIn() {
     return (
@@ -33,7 +34,7 @@ function SignIn() {
                             <button type="submit"  className='border-2 border-gray-300 text-black rounded-md px-1 text-sm py-1  bg-white w-full flex items-center' ><FaApple className='mr-1'/> Sign in with Apple</button>
                         </div>
                         <div className='mt-[3vh] text-center'>
-                            <p className='text-sm'>Don’t have an account? <a href="/Signup"><span className='text-secondary-main'> Sign Up</span></a> </p>
+                            <p className='text-sm'>Don’t have an account? <Link to="/Signup"><span className='text-secondary-main'> Sign Up</span></Link> </p>
                         </div>
                         
 
