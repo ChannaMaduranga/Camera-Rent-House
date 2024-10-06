@@ -1,5 +1,6 @@
+// App.js
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';  // Import both routers
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use only BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -49,10 +50,6 @@ function AppContent() {
 }
 
 function App() {
-  // Dynamically choose HashRouter for GitHub Pages, BrowserRouter for localhost
-  const isGithubPages = process.env.NODE_ENV === 'production';
-  const Router = isGithubPages ? HashRouter : BrowserRouter;
-
   return (
     <Router>
       <AppContent />

@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=./index.html" />
+    <meta charset="UTF-8" />
+    <title>Page Not Found</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Extract the current path
+      const path = window.location.pathname;
+      // Redirect to index.html with the path as a query parameter or hash
+      window.location.href = `/?path=${path}`;
+    </script>
   </head>
   <body>
-    <p>If you are not redirected, <a href="./index.html">click here</a>.</p>
+    <p>Redirecting...</p>
   </body>
 </html>
