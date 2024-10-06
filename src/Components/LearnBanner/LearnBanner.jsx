@@ -2,6 +2,8 @@ import React from 'react'
 
 import photographerImg from "../../assets/Images/photographer.png"
 import sonyvideo from "../../assets/Videos/sony.mp4"
+import { Link } from 'react-router-dom'
+Link
 
 function LearnBanner() {
     return (
@@ -21,9 +23,9 @@ function LearnBanner() {
 
                         </p>
 
-                        <a href='/Videos'><button className="border-2  text-white px-6 py-3 rounded-full font-bold mt-8 hover:bg-black hover:text-white hover:border-2 hover:border-white">
+                        <Link to='/Videos'><button className="border-2  text-white px-6 py-3 rounded-full font-bold mt-8 hover:bg-black hover:text-white hover:border-2 hover:border-white">
                             Watch video
-                        </button></a>
+                        </button></Link>
                     </div>
                     <div></div>
                     {/* <div className="md:w-2/4 h-full  relative md:mt-0 top-[vh] object-contain">
