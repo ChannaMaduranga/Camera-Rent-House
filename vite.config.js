@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ command }) => {
   return {
     plugins: [react()],
-    // base: command === 'build' ? '/Camera-Rent-House/' : '/', // Set base path for GitHub Pages
+     base: command === 'build' ? '/Camera-Rent-House/' : '/', // Set base path for GitHub Pages
   };
 });
