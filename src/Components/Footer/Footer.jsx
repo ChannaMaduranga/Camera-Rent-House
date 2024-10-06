@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 import { FaFacebook, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
@@ -23,10 +24,10 @@ function Footer() {
                     <div className=' md:pl-[50%]  '>
                             <h3 className="font-bold text-lg mb-4">COMPANY</h3>
                             <ul className='text-sm md:text-lg'>
-                                <a href="/"><li className="mb-2 hover:underline cursor-pointer">Home</li></a>
-                                <a href="/Allitems"><li className="mb-2 hover:underline cursor-pointer">All Items</li></a>
-                                <a href="/About"><li className="mb-2 hover:underline cursor-pointer">About</li></a>
-                                <a href="/Contact"><li className="mb-2 hover:underline cursor-pointer">Contact</li></a>
+                                <Link to="/"><li className="mb-2 hover:underline cursor-pointer">Home</li></Link>
+                                <Link to="/Allitems"><li className="mb-2 hover:underline cursor-pointer">All Items</li></Link>
+                                <Link to="/About"><li className="mb-2 hover:underline cursor-pointer">About</li></Link>
+                                <Link to="/Contact"><li className="mb-2 hover:underline cursor-pointer">Contact</li></Link>
                             </ul>
                         </div>
 
