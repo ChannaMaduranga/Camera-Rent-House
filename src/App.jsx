@@ -1,6 +1,6 @@
 // App.js
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use only BrowserRouter
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Use only BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
