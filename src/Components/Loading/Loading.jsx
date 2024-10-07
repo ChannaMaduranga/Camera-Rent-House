@@ -1,6 +1,6 @@
 import React , {useState,useEffect} from 'react'
 import "./Loading.css";
-import logopng from "../../assets/Images/Loading.png"
+import logopng from "../../assets/Images/Loading1.png"
 
 
 

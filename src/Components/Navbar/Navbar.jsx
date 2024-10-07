@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom'; // Import Link
 import { FiMenu, FiX } from 'react-icons/fi';
+import logo from '../../assets/Images/Loading1.png'
 
 function Navbar() {
   const location = useLocation(); // Get the current path
@@ -30,7 +31,7 @@ function Navbar() {
       <nav ref={navRef} className="bg-white shadow-lg py-4 relative z-50">
         <div className="container mx-auto px-6 md:w-[80%] md:px-0 flex items-center justify-between">
           <div className="text-lg font-bold text-teal-600">
-          
+          {/* <Link to="/"><img src={logo} width={50} alt="" /></Link> */}
             <Link to="/">Camera Rent House</Link>
           </div>
 
