@@ -136,7 +136,7 @@ function ViewItem() {
 
   return (
     <div className="md:w-[80%] w-[90%] mt-10 md:mt-[10vh] mx-auto font-outfit">
-      <div className='flex flex-col md:flex-row w-full h-[100vh] sm:h-auto md:space-x-5'>
+      <div className='flex flex-col md:flex-row w-full h-[90vh] sm:h-auto md:space-x-5'>
         <div className='w-3/4 sm:w-3/5 md:w-2/5 lg:w-1/3 h-full relative mx-auto flex items-center'>
           <img src={viewItem.image} alt={viewItem.name} className="mx-auto md:w-full " />
         </div>
