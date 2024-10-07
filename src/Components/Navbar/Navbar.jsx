@@ -24,48 +24,44 @@ function Navbar() {
 
   return (
     <>
-      {/* Add backdrop blur when menu is open */}
+      
       {menuOpen && <div className="fixed inset-0 z-40 backdrop-blur-sm bg-black bg-opacity-40" />}
 
       <nav ref={navRef} className="bg-white shadow-lg py-4 relative z-50">
         <div className="container mx-auto px-6 md:w-[80%] md:px-0 flex items-center justify-between">
           <div className="text-lg font-bold text-teal-600">
-            {/* Replace <a> with <Link> */}
+          
             <Link to="/">Camera Rent House</Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 font-poppins">
-            {/* Replace <a> with <Link> and use 'to' instead of 'href' */}
+           
             <Link
               to="/"
-              className={`text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/' ? 'border-b-2 border-teal-600' : ''
-              }`}
+              className={`text-gray-600 hover:text-teal-600 ${location.pathname === '/' ? 'border-b-2 border-teal-600' : ''
+                }`}
             >
               HOME
             </Link>
             <Link
               to="/AllItems"
-              className={`text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/AllItems' ? 'border-b-2 border-teal-600' : ''
-              }`}
+              className={`text-gray-600 hover:text-teal-600 ${location.pathname === '/AllItems' ? 'border-b-2 border-teal-600' : ''
+                }`}
             >
               ALL ITEMS
             </Link>
             <Link
               to="/about"
-              className={`text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/about' ? 'border-b-2 border-teal-600' : ''
-              }`}
+              className={`text-gray-600 hover:text-teal-600 ${location.pathname === '/about' ? 'border-b-2 border-teal-600' : ''
+                }`}
             >
               ABOUT
             </Link>
             <Link
               to="/contact"
-              className={`text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/contact' ? 'border-b-2 border-teal-600' : ''
-              }`}
+              className={`text-gray-600 hover:text-teal-600 ${location.pathname === '/contact' ? 'border-b-2 border-teal-600' : ''
+                }`}
             >
               CONTACT
             </Link>
@@ -82,7 +78,7 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Replace <a> with <Link> */}
+          
           <Link to="/Signin">
             <button className="hidden lg:flex bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-900">
               Create account
@@ -91,56 +87,53 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden z-50 absolute bg-white text-center pb-4 space-y-4 font-outfit font-semibold p-8 m-4 w-[100%] mx-auto">
-            {/* Replace <a> with <Link> and use 'to' instead of 'href' */}
-            <Link
-              to="/"
-              className={`block text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/' ? 'border-b-2 border-teal-600' : ''
+        <div
+          className={`md:hidden z-50 absolute bg-white text-center pb-20 space-y-4 font-outfit font-semibold p-8 m-4 w-[100%] mx-auto transition-transform duration-300 ease-in-out transform ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+            }`}
+        >
+          
+          <Link
+            to="/"
+            className={`block text-gray-600 hover:text-teal-600 ${location.pathname === "/" ? "border-b-2 border-teal-600" : ""
               }`}
-              onClick={() => setMenuOpen(false)} // Close menu on click
-            >
-              HOME
-            </Link>
-            <Link
-              to="/AllItems"
-              className={`block text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/AllItems' ? 'border-b-2 border-teal-600' : ''
+            onClick={() => setMenuOpen(false)} // Close menu on click
+          >
+            HOME
+          </Link>
+          <Link
+            to="/AllItems"
+            className={`block text-gray-600 hover:text-teal-600 ${location.pathname === "/AllItems" ? "border-b-2 border-teal-600" : ""
               }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              ALL ITEMS
-            </Link>
-            <Link
-              to="/about"
-              className={`block text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/about' ? 'border-b-2 border-teal-600' : ''
+            onClick={() => setMenuOpen(false)}
+          >
+            ALL ITEMS
+          </Link>
+          <Link
+            to="/about"
+            className={`block text-gray-600 hover:text-teal-600 ${location.pathname === "/about" ? "border-b-2 border-teal-600" : ""
               }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              ABOUT
-            </Link>
-            <Link
-              to="/contact"
-              className={`block text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/contact' ? 'border-b-2 border-teal-600' : ''
+            onClick={() => setMenuOpen(false)}
+          >
+            ABOUT
+          </Link>
+          <Link
+            to="/contact"
+            className={`block text-gray-600 hover:text-teal-600 ${location.pathname === "/contact" ? "border-b-2 border-teal-600" : ""
               }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              CONTACT
-            </Link>
-            <Link
-              to="/Signin" // Confirm if this should be '/Signup' instead
-              className={`block text-gray-600 hover:text-teal-600 ${
-                location.pathname === '/Signin' ? 'border-b-2 border-teal-600' : ''
+            onClick={() => setMenuOpen(false)}
+          >
+            CONTACT
+          </Link>
+          <Link
+            to="/Signin"
+            className={`block text-gray-600 hover:text-teal-600 ${location.pathname === "/Signin" ? "border-b-2 border-teal-600" : ""
               }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              SIGN UP
-            </Link>
-          </div>
-        )}
+            onClick={() => setMenuOpen(false)}
+          >
+            SIGN UP
+          </Link>
+        </div>
+
       </nav>
     </>
   );
