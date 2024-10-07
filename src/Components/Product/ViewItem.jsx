@@ -136,12 +136,12 @@ function ViewItem() {
 
   return (
     <div className="md:w-[80%] w-[90%] mt-10 md:mt-[10vh] mx-auto font-outfit">
-      <div className='flex flex-col md:flex-row w-full md:space-x-5'>
-        <div className='w-1/2 md:w-2/5 lg:w-1/3 h-full relative mx-auto'>
-          <img src={viewItem.image} alt={viewItem.name} className="mx-auto md:w-full" />
+      <div className='flex flex-col md:flex-row w-full h-[100vh] sm:h-auto md:space-x-5'>
+        <div className='w-3/4 sm:w-3/5 md:w-2/5 lg:w-1/3 h-full relative mx-auto flex items-center'>
+          <img src={viewItem.image} alt={viewItem.name} className="mx-auto md:w-full " />
         </div>
         <div className='md:w-3/4 h-full'>
-          <h2 className="text-xl md:text-2xl md:px-6 font-bold mb-4 mt-8 md:mt-0 lg:mt-8">
+          <h2 className="text-xl md:text-2xl md:px-6 font-bold mb-4  sm:mt-8 md:mt-0 lg:mt-8">
             {viewItem.name}
           </h2>
           <h2 className="text-xl md:text-xl md:px-6 font-semibold mb-4 text-gray-700 mt-8">
@@ -166,7 +166,7 @@ function ViewItem() {
           </div>
         </div>
       </div>
-      <div className='md:mt-4 mt-16'>
+      <div className='md:mt-4 mt-8'>
         <h2 className="text-xl md:text-xl font-semibold mb-4 text-gray-600 mt-8 md:mt-16">CONDITION</h2>
         <hr className='h-1 border-1 bg-gray-200' />
       </div>
