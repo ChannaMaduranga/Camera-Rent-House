@@ -20,7 +20,7 @@ function Loading() {
     return (
         <div className="h-screen flex flex-col justify-center items-center">
         <div className="flex flex-col items-center">
-          <img src={logopng} className="w-20 h-20 p-2 lg:w-24 lg:h-24" alt="" />
+          <img src={logopng} className="w-24 h-24 p-2 lg:w-30 lg:h-30" alt="" />
           <div className="dots mt-4"></div> {/* Add margin to separate elements */}
         </div>
       </div>

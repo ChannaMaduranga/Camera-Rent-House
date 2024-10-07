@@ -170,7 +170,7 @@ function ViewItem() {
         <h2 className="text-xl md:text-xl font-semibold mb-4 text-gray-600 mt-8 md:mt-16">CONDITION</h2>
         <hr className='h-1 border-1 bg-gray-200' />
       </div>
-      <div className='py-8 space-y-4'>
+      <div className='py-8 space-y-4 text-sm lg:text-base'>
         <p className='text-gray-600'><span className='font-semibold'>Security Deposit:</span> A refundable security deposit is required before equipment is rented out. The amount will vary depending on the equipment.</p>
         <p className='text-gray-600'><span className='font-semibold'>Rental Period:</span> All gear must be returned by the agreed-upon date and time. Late returns may incur additional fees.</p>
         <p className='text-gray-600'><span className='font-semibold'>Equipment Inspection:</span> Customers are responsible for inspecting the equipment upon receiving it and reporting any issues immediately.</p>
