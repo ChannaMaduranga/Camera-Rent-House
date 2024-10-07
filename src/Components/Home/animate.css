@@ -1,0 +1,7 @@
+.button span {
+    transition: transform 0.3s ease; /* For smoother animation */
+  }
+  
+  .button:hover span {
+    transform: translateX(0.25rem); /* Adjust as needed */
+  }

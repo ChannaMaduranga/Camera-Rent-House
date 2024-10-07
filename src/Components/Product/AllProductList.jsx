@@ -6,8 +6,9 @@ import nikon300mm from "../../assets/Images/nikon 300mm.jpg";
 import combosony from "../../assets/Images/combosony.jpg";
 import godoxv1 from "../../assets/Images/godoxv1.jpg";
 import air2 from "../../assets/Images/air2.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Pagination } from "antd";
+
 
 const itemsData = [
   {
@@ -159,12 +160,16 @@ const AllProductList = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {currentItems.map((item) => (
           <div key={item.id} className="border p-4 rounded shadow-lg">
+
+            <Link to={`/ViewItem/${item.id}`}>
             <div className="relative">
               <img src={item.image} alt={item.name} className="mx-auto" />
               <div className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1">
                 RENT
               </div>
             </div>
+            </Link>
+
             <div className="flex flex-row justify-between">
               <div className="text-start mt-2 font-semibold w-1/2">{item.name}</div>
               <div className="mt-2 w-1/2">

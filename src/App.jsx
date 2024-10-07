@@ -13,6 +13,7 @@ import WatchVideoPage from './Components/LearnBanner/WatchVideoPage';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import Loading from './Components/Loading/Loading';
+import ViewItem from './Components/Product/ViewItem';
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,7 @@ function AppContent() {
         <Route path="/Videos" element={<WatchVideoPage />} />
         <Route path="/Signin" element={<SignIn />} />
         <Route path="/Signup" element={<SignUp />} />
+        <Route path="/ViewItem/:id" element={<ViewItem/>} />
       </Routes>
       <Footer />
     </div>

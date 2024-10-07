@@ -7,7 +7,8 @@ import nikon300mm from "../../assets/Images/nikon 300mm.jpg"
 import combosony from "../../assets/Images/combosony.jpg"
 import godoxv1 from "../../assets/Images/godoxv1.jpg"
 import air2 from "../../assets/Images/air2.jpg"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const itemsData = [
     {
@@ -128,12 +129,14 @@ const Product = () => {
                 {filteredItems.map((item) => (
                     <div key={item.id} className="border p-4 rounded shadow-lg">
 
+                        <Link to={`/ViewItem/${item.id}`}>
                         <div className="relative">
                             <img src={item.image} alt={item.name} className="mx-auto" />
                             <div className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1">
                                 RENT
                             </div>
                         </div>
+                        </Link>
                         <div className="flex flex-row justify-between">
                             <div className="text-start mt-2 font-semibold w-1/2">{item.name}</div>
                             <div className="mt-2 w-1/2">
@@ -156,7 +159,7 @@ const Product = () => {
             {/* More Button */}
             <div className="flex justify-center mt-16">
                 <button onClick={handleRentClick} className="bg-[#57ad9e] hover:bg-secondary-main text-white px-8 py-2 rounded">
-                    more
+                    More Items
                 </button>
             </div>
         </div>

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Product from '../Product/Product';
 import LearnBanner from '../LearnBanner/LearnBanner';
 import Footer from '../Footer/Footer';
+import './animate.css';
 
 function Home() {
     const navigate = useNavigate(); // Create a navigate function from useNavigate
@@ -31,8 +32,11 @@ function Home() {
                             Now Available in Aluthgama, Mathugama, and Elpitiya. <br />  Rent High-Quality Camera Gear Near You!
                         </p>
 
-                        <button data-aos="zoom-in" data-aos-duration="1000" onClick={handleRentClick} className="bg-white text-teal-600 px-6 py-3 rounded-full font-bold md:mt-4 lg:mt-8 text-xs md:text-lg">
-                            Rent Your Gear →
+                        <button data-aos="zoom-in" data-aos-duration="1000" onClick={handleRentClick}  className="bg-white text-teal-600 px-6 py-3 rounded-full font-bold md:mt-4 lg:mt-8 text-xs md:text-lg relative overflow-hidden">
+                            Rent Your Gear
+                            <span className="inline-block  transition-transform duration-300 transform translate-x-0 hover:translate-x-2">
+                                →
+                            </span>
                         </button>
                     </div>
                     <div className="w-2/4 m-4 ml-[50%]  md:w-2/4 m  md:mt-0 " data-aos="fade-left">
@@ -57,7 +61,7 @@ function Home() {
 
             {/* Camera brand Images section */}
 
-            <section className='items-center justify-center text-center mt-16 w-[90%] sm:w-[80%] mx-auto'  data-aos="fade-up">
+            <section className='items-center justify-center text-center mt-16 w-[90%] sm:w-[80%] mx-auto' data-aos="fade-up">
                 <div className='md:h-16 w-full flex justify-center items-center space-x-4 sm:space-x-12 lg:space-x-20 md:px-16 '>
                     <div className=' h-full w-full flex justify-center items-center'>
                         <img className=" " src={sony} alt="Sony" />
@@ -77,17 +81,17 @@ function Home() {
             {/* product card list */}
 
             <section className="flex flex-col items-center justify-center text-center mt-12 md:mt-24 mb-16" data-aos="fade-up">
-                <Product/>
+                <Product />
             </section>
 
             <section className='md:w-[80%] w-[95%] mx-auto md:mt-[20vh]' data-aos="fade-in" data-aos-duration="2000">
-                <LearnBanner/>
+                <LearnBanner />
             </section>
-            
 
 
 
-            
+
+
 
 
 
