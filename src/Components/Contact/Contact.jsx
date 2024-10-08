@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 import { MdMailOutline } from "react-icons/md";
 import { IoIosHome } from "react-icons/io";
@@ -8,6 +8,9 @@ import ContactForm from './ContactForm';
 import { ToastContainer } from 'react-toastify';
 
 function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
 
     <div className='w-[80%] flex justify-center flex-col  mx-auto'>

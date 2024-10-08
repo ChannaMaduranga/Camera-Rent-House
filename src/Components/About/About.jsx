@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import aboutImg from '../../assets/Images/AboutImg.jpg'
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='w-[80%] flex justify-center flex-col  mx-auto'>
       <section className="flex flex-col items-center  justify-center text-center mt-16 md:mt-24 " data-aos="fade-in">

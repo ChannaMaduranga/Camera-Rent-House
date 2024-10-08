@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import poster from '../../assets/Images/POSTER.png';
 import sony from '../../assets/Images/sony.png';
 import canon from '../../assets/Images/canon.png';
@@ -16,6 +16,9 @@ function Home() {
     const handleRentClick = () => {
         navigate("/AllItems");
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <div>

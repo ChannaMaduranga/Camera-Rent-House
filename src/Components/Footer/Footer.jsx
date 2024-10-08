@@ -13,10 +13,12 @@ function Footer() {
                 <div className="container mx-auto flex flex-col space-y-4 md:space-y-0 md:grid  md:grid-cols-3 md:gap-8  w-[90%] md:w-[80%]">
                     {/* Left Section  */}
                     <div className=''>
+                    <Link to="/">
                         <div className='flex space-x-2 items-center  mb-4'>
                             <img src={logo} width={48} height={48} alt="" />
                             <h3 className="font-bold text-sm md:text-lg  ">CAMERA RENT HOUSE</h3>
                         </div>
+                        </Link>
                         <p className='text-justify text-sm md:text-lg'>
                             Camera Rent House offers top-quality camera gear rentals at
                             affordable rates. Whether you're a professional or hobbyist, we
@@ -65,7 +67,7 @@ function Footer() {
                 {/* bottom section */}
                 <div className="border-t border-gray-200 mt-10 pt-4 p-4 text-center  pb-4 ">
                     <p className="text-sm">
-                        Copyright © 2024 CodeFlare Solutions by channa maduranga – All Right Reserved.
+                        Copyright © 2024 Solutions by channa maduranga – All Right Reserved.
                     </p>
                 </div>
             </footer>

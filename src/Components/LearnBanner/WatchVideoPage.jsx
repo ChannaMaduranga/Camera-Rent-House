@@ -1,10 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 import img1 from "../../assets/Images/video1.png"
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 
 function WatchVideoPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     const itemsData = [
         {
