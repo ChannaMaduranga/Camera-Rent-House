@@ -15,7 +15,7 @@ function Contact() {
 
       <section className="flex flex-col items-center  justify-center text-center mt-16 md:mt-24 " data-aos="fade-in">
         <div className=' font-outfit'>
-          <h2 className="text-3xl md:text-3xl font-semibold mb-4 ">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-600 ">
             CONTACT <span className='font-semibold'>US</span>
           </h2>
         </div>
