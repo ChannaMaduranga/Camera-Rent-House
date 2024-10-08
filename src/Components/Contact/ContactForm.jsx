@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 
 const ContactForm = () => {
-  const notify = () => toast.success("Your message has been sent successfully!");
+  const notify = () => {
+    toast.success("Your message has been sent successfully!", {
+      position: "top-right", // Change position here if needed
+      autoClose: 3000, // Time in milliseconds before the toast disappears
+    })};
 
   const [contactForm, setContactForm] = useState({
     name: "",
@@ -27,7 +33,7 @@ const ContactForm = () => {
         message: ""
       });
       setIsSubmitted(true);
-      notify(); // Trigger toast notification
+      notify();
     } catch (error) {
       console.error('Failed to send email:', error);
     }
@@ -91,8 +97,7 @@ const ContactForm = () => {
         </div>
       </form>
 
-      {/* Toast Container should be outside the condition */}
-      <ToastContainer />
+      
     </div>
   );
 };

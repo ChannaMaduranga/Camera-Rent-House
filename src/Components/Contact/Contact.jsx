@@ -5,10 +5,14 @@ import { IoIosHome } from "react-icons/io";
 import { FiPhone } from "react-icons/fi";
 import MapComponent from '../MapComponent/MapComponent';
 import ContactForm from './ContactForm';
+import { ToastContainer } from 'react-toastify';
 
 function Contact() {
   return (
+
     <div className='w-[80%] flex justify-center flex-col  mx-auto'>
+     <ToastContainer  position='top-right'/>
+
       <section className="flex flex-col items-center  justify-center text-center mt-16 md:mt-24 " data-aos="fade-in">
         <div className=' font-outfit'>
           <h2 className="text-3xl md:text-3xl font-semibold mb-4 ">
