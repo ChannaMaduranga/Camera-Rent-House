@@ -25,13 +25,13 @@ function Home() {
             {/* Banner Section */}
             <section className="bg-[#028F76] py-6 sm:py-12 md:py-8 lg:py-4 w-[95%] md:w-[80%] mx-auto my-8 rounded-2xl">
                 <div className="container relative mx-auto  md:px-12 flex  md:flex-row items-center">
-                    <div className="w-3/4 px-4 sm:px-8 md:px-4 md:w-3/4 text-white absolute top-0 sm:top-[5%] lg:top-[10%] xl:top-[20%] " >
+                    <div className="w-3/4 px-4 sm:px-8 md:px-4 md:w-3/4 z-10 text-white absolute top-0 sm:top-[5%] lg:top-[10%]  xl:top-[25%] " >
                         <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4" data-aos="fade-up">
                             Get Premium Camera Gear
                             <br />
                             at Camera Rent House
                         </h1>
-                        <p className="text-xs md:text-lg md-w[50%] mb-6 mt-8" data-aos="zoom-in">
+                        <p className="text-xs md:text-lg md-w[50%] mb-6 mt-8 z-50" data-aos="zoom-in">
                             Now Available in Aluthgama, Mathugama, and Elpitiya. <br />  Rent High-Quality Camera Gear Near You!
                         </p>
 
@@ -42,7 +42,7 @@ function Home() {
                             </span>
                         </button>
                     </div>
-                    <div className="w-2/4 m-4 ml-[50%]  md:w-2/4 m  md:mt-0 " data-aos="fade-left">
+                    <div className="w-2/4 m-4 ml-[50%]  md:w-2/4 m  md:mt-0  " data-aos="fade-left">
                         <img
                             src={poster}
                             alt="Camera Gear"

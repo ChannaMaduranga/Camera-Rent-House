@@ -1,6 +1,5 @@
-// App.js
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Use only BrowserRouter
+import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom'; // Use only BrowserRouter
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import AllItems from './Components/AllItems/AllItems';
@@ -14,9 +13,12 @@ import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import Loading from './Components/Loading/Loading';
 import ViewItem from './Components/Product/ViewItem';
+import Admin from './Components/Admin/Admin';
+import UpdateItem from './Components/Admin/UpdateItem';
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation(); // Get the current location
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -31,11 +33,16 @@ function AppContent() {
     return () => clearTimeout(timer);
   }, []);
 
+  const isAdminLoginRoute = location.pathname === '/Admin-login';
+
+  
+
   return loading ? (
     <Loading />
   ) : (
     <div>
-      <Navbar />
+      {/* Conditionally render Navbar and Footer */}
+      {!isAdminLoginRoute && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/AllItems" element={<AllItems />} />
@@ -44,9 +51,11 @@ function AppContent() {
         <Route path="/Videos" element={<WatchVideoPage />} />
         <Route path="/Signin" element={<SignIn />} />
         <Route path="/Signup" element={<SignUp />} />
-        <Route path="/ViewItem/:id" element={<ViewItem/>} />
+        <Route path="/ViewItem/:id" element={<ViewItem />} />
+        <Route path="/Admin-login" element={<Admin />} />
+        <Route path="/Admin-login/update-item/:id" element={<UpdateItem />} />
       </Routes>
-      <Footer />
+      {!isAdminLoginRoute && <Footer />}
     </div>
   );
 }
