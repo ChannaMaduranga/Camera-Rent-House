@@ -15,6 +15,10 @@ import Loading from './Components/Loading/Loading';
 import ViewItem from './Components/Product/ViewItem';
 import Admin from './Components/Admin/Admin';
 import UpdateItem from './Components/Admin/UpdateItem';
+import AddItem from './Components/Admin/AddItem';
+import ItemList from './Components/Admin/ItemList';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -33,7 +37,7 @@ function AppContent() {
     return () => clearTimeout(timer);
   }, []);
 
-  const isAdminLoginRoute = location.pathname === '/Admin-login';
+  const isAdminLoginRoute = (location.pathname === '/admin' || location.pathname === '/admin/addItem' || location.pathname === '/admin/itemList'  || location.pathname.startsWith('/admin/update-item/')) ;
 
   
 
@@ -41,6 +45,7 @@ function AppContent() {
     <Loading />
   ) : (
     <div>
+      <ToastContainer />
       {/* Conditionally render Navbar and Footer */}
       {!isAdminLoginRoute && <Navbar />}
       <Routes>
@@ -52,8 +57,10 @@ function AppContent() {
         <Route path="/Signin" element={<SignIn />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/ViewItem/:id" element={<ViewItem />} />
-        <Route path="/Admin-login" element={<Admin />} />
-        <Route path="/Admin-login/update-item/:id" element={<UpdateItem />} />
+        <Route path="/admin/addItem" element={<AddItem />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path='/admin/itemList' element={<ItemList/>}/>
+        <Route path="/admin/update-item/:id" element={<UpdateItem />} />
       </Routes>
       {!isAdminLoginRoute && <Footer />}
     </div>

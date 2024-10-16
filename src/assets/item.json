@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "category": "Camera",
+      "name": "NIKON D750",
+      "price": "Rs 4000",
+      "perDay": "Per day",
+      "image": "nikonD750"
+    },
+    {
+      "id": 2,
+      "category": "Camera",
+      "name": "SONY A7III",
+      "price": "Rs 4500",
+      "perDay": "Per day",
+      "image": "sonyA73"
+    },
+    {
+      "id": 3,
+      "category": "Lens",
+      "name": "SIGMA 50MM",
+      "price": "Rs 3000",
+      "perDay": "Per day",
+      "image": "sigma50mm"
+    },
+    {
+      "id": 4,
+      "category": "Camera",
+      "name": "NIKON D750",
+      "price": "Rs 4000",
+      "perDay": "Per day",
+      "image": "nikonD750"
+    },
+    {
+      "id": 5,
+      "category": "Lens",
+      "name": "SIGMA 50MM 1.4",
+      "price": "Rs 3000",
+      "perDay": "Per day",
+      "image": "sigma50mm"
+    },
+    {
+      "id": 6,
+      "category": "Combo Pack",
+      "name": "SONY COMBO",
+      "price": "Rs 10000",
+      "perDay": "Per day",
+      "image": "combosony"
+    },
+    {
+      "id": 7,
+      "category": "Lens",
+      "name": "NIKON 300MM",
+      "price": "Rs 3000",
+      "perDay": "Per day",
+      "image": "nikon300mm"
+    },
+    {
+      "id": 8,
+      "category": "Light",
+      "name": "GODOX V1",
+      "price": "Rs 2000",
+      "perDay": "Per day",
+      "image": "godoxv1"
+    }
+  ]
+  

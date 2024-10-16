@@ -1,0 +1,90 @@
+[
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579ca"
+    },
+   
+    "category": "Camera",
+    "name": "NIKON D750",
+    "price": "Rs 4000",
+    "image":"src/assets/Images/nikonD750.jpg",
+    "description": "A full-frame DSLR camera known for its excellent image quality, 24.3MP sensor, and versatile performance, ideal for both photography and videography."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579cb"
+    },
+   
+    "category": "Camera",
+    "name": "SONY A7III",
+    "price": "Rs 4500",
+    "image": "src/assets/Images/sony A73.jpg",
+    "description": "A popular mirrorless camera featuring a 24.2MP sensor, fast autofocus, and impressive low-light performance, perfect for professionals and enthusiasts alike."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579cc"
+    },
+  
+    "category": "Lens",
+    "name": "SIGMA 50MM",
+    "price": "Rs 3000",
+    "image": "src/assets/Images/sigma 50mm.jpg",
+    "description": "A high-performance prime lens, offering sharp images with a wide aperture, ideal for portraits and low-light shooting."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579cd"
+    },
+   
+    "category": "Camera",
+    "name": "NIKON D750",
+    "price": "Rs 4000",
+    "image": "src/assets/Images/nikonD750.jpg",
+    "description": "The same powerful full-frame DSLR, providing outstanding detail and dynamic range for photographers."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579ce"
+    },
+   
+    "category": "Lens",
+    "name": "SIGMA 50MM 1.4",
+    "price": "Rs 3000",
+    "image": "src/assets/Images/sigma 50mm.jpg",
+    "description": "A fast prime lens with a wide aperture, delivering superb depth of field and bokeh, perfect for portrait and artistic photography."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579cf"
+    },
+   
+    "category": "Combo Pack",
+    "name": "SONY COMBO",
+    "price": "Rs 10000",
+    "image": "src/assets/Images/combosony.jpg",
+    "description": "A comprehensive package including the Sony A7III camera, ideal lenses, and accessories, designed to cover all your photography needs."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579d0"
+    },
+    
+    "category": "Lens",
+    "name": "NIKON 300MM",
+    "price": "Rs 3000",
+    "image": "src/assets/Images/nikon 300mmjpg",
+    "description": "A telephoto lens ideal for wildlife, sports, and long-distance photography, offering sharpness and precision at a long focal length."
+  },
+  {
+    "_id": {
+      "$oid": "670bdd60f4734fe6ac7579d1"
+    },
+    
+    "category": "Light",
+    "name": "GODOX V1",
+    "price": "Rs 2000",
+    "image": "src/assets/Images/godoxv1.jpg",
+    "description": "A powerful and versatile round-head speedlight, offering high-speed sync, great light spread, and creative lighting options for photographers."
+  }
+]

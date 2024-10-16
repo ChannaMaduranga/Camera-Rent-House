@@ -1,138 +1,170 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios'; 
 
-import nikonD750 from "../../assets/Images/nokonD750.jpg";
+import nikonD750 from "../../assets/Images/nikonD750.jpg";
 import sonyA73 from "../../assets/Images/sony A73.jpg";
 import sigma50mm from "../../assets/Images/sigma 50mm.jpg";
 import nikon300mm from "../../assets/Images/nikon 300mm.jpg";
 import combosony from "../../assets/Images/combosony.jpg";
 import godoxv1 from "../../assets/Images/godoxv1.jpg";
 import air2 from "../../assets/Images/air2.jpg";
+import Loading from '../Loading/Loading';
+
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 function ViewItem() {
-    const items = [
-        {
-          id: 1,
-          category: "Camera",
-          name: "NIKON D750",
-          price: "Rs 4000",
-          perDay: "Per day",
-          image: nikonD750,
-          description: "The Nikon D750 is a versatile full-frame DSLR featuring a 24.3MP sensor, offering impressive image quality, dynamic range, and low-light performance. Ideal for both photography and videography."
-        },
-        {
-          id: 2,
-          category: "Camera",
-          name: "SONY A7III",
-          price: "Rs 4500",
-          perDay: "Per day",
-          image: sonyA73,
-          description: "The Sony A7III is a powerful mirrorless camera with a 24.2MP sensor, excellent autofocus, and 4K video recording. It is lightweight, making it perfect for photographers and videographers on the go."
-        },
-        {
-          id: 3,
-          category: "Lens",
-          name: "SIGMA 50MM",
-          price: "Rs 3000",
-          perDay: "Per day",
-          image: sigma50mm,
-          description: "The Sigma 50mm f/1.4 is a high-performance prime lens designed for sharpness and clarity, perfect for portrait, street, and general photography. Its wide aperture ensures great low-light performance."
-        },
-        {
-          id: 4,
-          category: "Camera",
-          name: "NIKON D750",
-          price: "Rs 4000",
-          perDay: "Per day",
-          image: nikonD750,
-          description: "The Nikon D750 is a versatile full-frame DSLR featuring a 24.3MP sensor, offering impressive image quality, dynamic range, and low-light performance. Ideal for both photography and videography."
-        },
-        {
-          id: 5,
-          category: "Lens",
-          name: "SIGMA 50MM 1.4",
-          price: "Rs 3000",
-          perDay: "Per day",
-          image: sigma50mm,
-          description: "The Sigma 50mm f/1.4 is a high-performance prime lens known for its sharpness and wide aperture, making it excellent for portraits, low-light shooting, and creating beautiful bokeh."
-        },
-        {
-          id: 6,
-          category: "Combo Pack",
-          name: "SONY COMBO",
-          price: "Rs 10000",
-          perDay: "Per day",
-          image: combosony,
-          description: "The Sony Combo includes a powerful camera and essential accessories, providing a complete solution for professional photographers and videographers. It’s a perfect kit for those seeking superior performance."
-        },
-        {
-          id: 7,
-          category: "Lens",
-          name: "NIKON 300MM",
-          price: "Rs 3000",
-          perDay: "Per day",
-          image: nikon300mm,
-          description: "The Nikon 300mm f/4 lens is ideal for sports, wildlife, and action photography. With its fast aperture and telephoto reach, it captures distant subjects with clarity and sharpness."
-        },
-        {
-          id: 8,
-          category: "Light",
-          name: "GODOX V1",
-          price: "Rs 2000",
-          perDay: "Per day",
-          image: godoxv1,
-          description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
-        },
-        {
-          id: 9,
-          category: "Drone",
-          name: "MAVIC AIR 2",
-          price: "Rs 4500",
-          perDay: "Per day",
-          image: air2,
-          description: "The DJI Mavic Air 2 is a compact and powerful drone with a 48MP camera, capable of shooting 4K video. It is perfect for capturing stunning aerial shots and smooth footage."
-        },
-        {
-          id: 10,
-          category: "Light",
-          name: "GODOX V1",
-          price: "Rs 2000",
-          perDay: "Per day",
-          image: godoxv1,
-          description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
-        },
-        {
-          id: 11,
-          category: "Drone",
-          name: "MAVIC AIR 2",
-          price: "Rs 4500",
-          perDay: "Per day",
-          image: air2,
-          description: "The DJI Mavic Air 2 is a compact and powerful drone with a 48MP camera, capable of shooting 4K video. It is perfect for capturing stunning aerial shots and smooth footage."
-        },
-        {
-          id: 12,
-          category: "Light",
-          name: "GODOX V1",
-          price: "Rs 2000",
-          perDay: "Per day",
-          image: godoxv1,
-          description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
-        }
-      ];
+    // const items = [
+    //     {
+    //       id: 1,
+    //       category: "Camera",
+    //       name: "NIKON D750",
+    //       price: "Rs 4000",
+    //       perDay: "Per day",
+    //       image: nikonD750,
+    //       description: "The Nikon D750 is a versatile full-frame DSLR featuring a 24.3MP sensor, offering impressive image quality, dynamic range, and low-light performance. Ideal for both photography and videography."
+    //     },
+    //     {
+    //       id: 2,
+    //       category: "Camera",
+    //       name: "SONY A7III",
+    //       price: "Rs 4500",
+    //       perDay: "Per day",
+    //       image: sonyA73,
+    //       description: "The Sony A7III is a powerful mirrorless camera with a 24.2MP sensor, excellent autofocus, and 4K video recording. It is lightweight, making it perfect for photographers and videographers on the go."
+    //     },
+    //     {
+    //       id: 3,
+    //       category: "Lens",
+    //       name: "SIGMA 50MM",
+    //       price: "Rs 3000",
+    //       perDay: "Per day",
+    //       image: sigma50mm,
+    //       description: "The Sigma 50mm f/1.4 is a high-performance prime lens designed for sharpness and clarity, perfect for portrait, street, and general photography. Its wide aperture ensures great low-light performance."
+    //     },
+    //     {
+    //       id: 4,
+    //       category: "Camera",
+    //       name: "NIKON D750",
+    //       price: "Rs 4000",
+    //       perDay: "Per day",
+    //       image: nikonD750,
+    //       description: "The Nikon D750 is a versatile full-frame DSLR featuring a 24.3MP sensor, offering impressive image quality, dynamic range, and low-light performance. Ideal for both photography and videography."
+    //     },
+    //     {
+    //       id: 5,
+    //       category: "Lens",
+    //       name: "SIGMA 50MM 1.4",
+    //       price: "Rs 3000",
+    //       perDay: "Per day",
+    //       image: sigma50mm,
+    //       description: "The Sigma 50mm f/1.4 is a high-performance prime lens known for its sharpness and wide aperture, making it excellent for portraits, low-light shooting, and creating beautiful bokeh."
+    //     },
+    //     {
+    //       id: 6,
+    //       category: "Combo Pack",
+    //       name: "SONY COMBO",
+    //       price: "Rs 10000",
+    //       perDay: "Per day",
+    //       image: combosony,
+    //       description: "The Sony Combo includes a powerful camera and essential accessories, providing a complete solution for professional photographers and videographers. It’s a perfect kit for those seeking superior performance."
+    //     },
+    //     {
+    //       id: 7,
+    //       category: "Lens",
+    //       name: "NIKON 300MM",
+    //       price: "Rs 3000",
+    //       perDay: "Per day",
+    //       image: nikon300mm,
+    //       description: "The Nikon 300mm f/4 lens is ideal for sports, wildlife, and action photography. With its fast aperture and telephoto reach, it captures distant subjects with clarity and sharpness."
+    //     },
+    //     {
+    //       id: 8,
+    //       category: "Light",
+    //       name: "GODOX V1",
+    //       price: "Rs 2000",
+    //       perDay: "Per day",
+    //       image: godoxv1,
+    //       description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
+    //     },
+    //     {
+    //       id: 9,
+    //       category: "Drone",
+    //       name: "MAVIC AIR 2",
+    //       price: "Rs 4500",
+    //       perDay: "Per day",
+    //       image: air2,
+    //       description: "The DJI Mavic Air 2 is a compact and powerful drone with a 48MP camera, capable of shooting 4K video. It is perfect for capturing stunning aerial shots and smooth footage."
+    //     },
+    //     {
+    //       id: 10,
+    //       category: "Light",
+    //       name: "GODOX V1",
+    //       price: "Rs 2000",
+    //       perDay: "Per day",
+    //       image: godoxv1,
+    //       description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
+    //     },
+    //     {
+    //       id: 11,
+    //       category: "Drone",
+    //       name: "MAVIC AIR 2",
+    //       price: "Rs 4500",
+    //       perDay: "Per day",
+    //       image: air2,
+    //       description: "The DJI Mavic Air 2 is a compact and powerful drone with a 48MP camera, capable of shooting 4K video. It is perfect for capturing stunning aerial shots and smooth footage."
+    //     },
+    //     {
+    //       id: 12,
+    //       category: "Light",
+    //       name: "GODOX V1",
+    //       price: "Rs 2000",
+    //       perDay: "Per day",
+    //       image: godoxv1,
+    //       description: "The Godox V1 is a versatile round-head flash for both on-camera and off-camera usage. It provides natural lighting and supports wireless control, ideal for professional lighting setups."
+    //     }
+    //   ];
       
 
   const { id } = useParams();
-  const numericId = Number(id); // Convert the id to a number
-  const viewItem = items.find(item => item.id === numericId);
+  const [viewItem, setViewItem] = useState(null);
+  //const numericId = Number(id); // Convert the id to a number
+  const [loading, setLoading] = useState(true);
+  //const [error, setError] = useState(null);
+  // const viewItem = items.find(item => item.id === numericId);
 
-  if (!viewItem) {
-    return <div>Item not found</div>;
-  }
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/items/${id}`); // Fetch data from API
+        setViewItem(response.data); // Set the fetched data
+        setLoading(false); // Disable loading once data is fetched
+      } catch (error) {
+        console.error("Error fetching items:", error);
+        setLoading(false); // Disable loading in case of error
+      }
+    finally {
+      setLoading(false);
+    }
+    };
+    
+    fetchItems();
+  }, [id]);
+
+
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  if (loading) {
+    return <div><Loading/></div>;
+  }
+
+  if (!viewItem) {
+    return <div>Item not found</div>;
+  }
 
   return (
     <div className="md:w-[80%] w-[90%] mt-10 md:mt-[10vh] mx-auto font-outfit">

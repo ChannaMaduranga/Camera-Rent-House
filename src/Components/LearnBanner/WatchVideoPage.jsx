@@ -1,6 +1,10 @@
 import React,{useEffect} from 'react'
 
-import img1 from "../../assets/Images/video1.png"
+import img1 from "../../assets/Images/video1.png";
+import img2 from "../../assets/Images/video2.png"
+import img3 from "../../assets/Images/video3.png"
+import img4 from "../../assets/Images/video4.png"
+
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 
@@ -17,29 +21,24 @@ function WatchVideoPage() {
             videoLink: 'https://www.youtube.com/watch?v=3yk_YgkaWGo&pp=ygUkUmV2aWV3IFNvbnkgQTcgaWlpIE1pcnJvcmxlc3MgY2FtZXJh',
         },
         {
-            id: 1,
-            name: "Review Sony A7 iii Mirrorless camera",
-            image: img1,
-            videoLink: 'https://www.youtube.com/watch?v=3yk_YgkaWGo&pp=ygUkUmV2aWV3IFNvbnkgQTcgaWlpIE1pcnJvcmxlc3MgY2FtZXJh',
+            id: 2,
+            name: "Sony’s 200-600mm lens for wildlife photography",
+            image: img2,
+            videoLink: 'https://www.youtube.com/watch?v=aJHbBhh2jZI&ab_channel=WillBurrard-Lucas',
         },
         {
-            id: 1,
-            name: "Review Sony A7 iii Mirrorless camera",
-            image: img1,
-            videoLink: 'https://www.youtube.com/watch?v=3yk_YgkaWGo&pp=ygUkUmV2aWV3IFNvbnkgQTcgaWlpIE1pcnJvcmxlc3MgY2FtZXJh',
+            id: 3,
+            name: "Best Mirrorless Camera 2024",
+            image: img3,
+            videoLink: 'https://www.youtube.com/watch?v=gk9Rrde6L-A&pp=ygUibWlycm9ybGVzcyBjYW1lcmEgYW5kIGxlbnMgcmV2aWV3IA%3D%3D',
         },
         {
-            id: 1,
-            name: "Review Sony A7 iii Mirrorless camera",
-            image: img1,
-            videoLink: 'https://www.youtube.com/watch?v=3yk_YgkaWGo&pp=ygUkUmV2aWV3IFNvbnkgQTcgaWlpIE1pcnJvcmxlc3MgY2FtZXJh',
+            id: 4,
+            name: "Nikon Z5: A Full Frame Camera",
+            image: img4,
+            videoLink: 'https://www.youtube.com/watch?v=XiZQaneQWHg&pp=ygUibWlycm9ybGVzcyBjYW1lcmEgYW5kIGxlbnMgcmV2aWV3IA%3D%3D',
         },
-        {
-            id: 1,
-            name: "Review Sony A7 iii Mirrorless camera",
-            image: img1,
-            videoLink: 'https://www.youtube.com/watch?v=3yk_YgkaWGo&pp=ygUkUmV2aWV3IFNvbnkgQTcgaWlpIE1pcnJvcmxlc3MgY2FtZXJh',
-        },
+        
     ]
 
     return (
