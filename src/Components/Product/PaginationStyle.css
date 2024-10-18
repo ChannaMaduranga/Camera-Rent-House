@@ -1,0 +1,28 @@
+/* paginationStyles.css */
+.ant-pagination-item {
+    border-color: white !important; /* Custom border color for number boxes */
+    border-width: 2px !important;     /* Custom border width */
+  }
+  
+  .ant-pagination-item-active {
+    border-color: #1DA57A !important; /* Custom border color for active number box */
+    background-color: white !important; /* Custom background color for active number box */
+    border-width: 3px 
+  }
+  
+  .ant-pagination-item-active a {
+    color: #1DA57A !important; /* Custom text color for active number */
+  }
+  
+  .ant-pagination-item a {
+    font-weight: bold !important; /* Bold font weight for pagination numbers */
+  }
+  
+  .ant-pagination-prev, .ant-pagination-next {
+    border-color: #1DA57A !important; /* Custom border color for prev/next */
+  }
+  
+  .ant-pagination-prev:hover, .ant-pagination-next:hover {
+    border-color: #FF5733 !important; /* Hover border color for prev/next */
+  }
+  

@@ -28,7 +28,7 @@ function Navbar() {
       
       {menuOpen && <div className="fixed inset-0 z-40 backdrop-blur-sm bg-black bg-opacity-40" />}
 
-      <nav ref={navRef} className="bg-white shadow-lg py-4 relative z-50">
+      <nav ref={navRef} className="bg-white shadow-lg py-4 relative z-50 font-outfit">
         <div className="container mx-auto px-6 md:w-[80%] md:px-0 flex items-center justify-between">
           <div className="text-lg font-bold text-teal-600">
           {/* <Link to="/"><img src={logo} width={50} alt="" /></Link> */}

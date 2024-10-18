@@ -10,4 +10,17 @@
     font-family: 'Outfit', sans-serif;
   }
   
+  .ant-pagination-item {
+    border-color: #1DA57A; /* Custom border color */
+  }
+  
+  /* Change border color when the page is active */
+  .ant-pagination-item-active {
+    border-color: #1DA57A; /* Custom active border color */
+    background-color: #1DA57A; /* Optional: change background for active state */
+  }
+  
+  .ant-pagination-item-active a {
+    color: white; /* Optional: change text color for active state */
+  }
   

@@ -18,7 +18,7 @@ function AllItems() {
                     <p className='font-light mt-8 text-[#4B5563]'>Simply browse through our extensive range of trusted camera gear.</p>
                 </div>
             </section>
-            <section className='md:py-[10vh] py-[5vh]'>
+            <section className='md:py-[10vh] py-[5vh] ' data-aos='fade-up'>
               <AllProductList/>
             </section>
     </div>

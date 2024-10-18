@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import "./PaginationStyle.css";
 import nikonD750 from "../../assets/Images/nikonD750.jpg";
 import sonyA73 from "../../assets/Images/sony A73.jpg";
 import sigma50mm from "../../assets/Images/sigma 50mm.jpg";
@@ -12,6 +13,8 @@ import axios from "axios";
 
 
 const API_URL = import.meta.env.VITE_API_URL;
+
+
 
 // const itemsData = [
 //   {
@@ -115,6 +118,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const categories = ["All",  "Camera", "Lens", "Light", "Drone"];
 
+
 const AllProductList = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -180,8 +184,8 @@ const AllProductList = () => {
 
       {/* Product Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {currentItems.map((item) => (
-          <div key={item.id} className="border p-4 rounded shadow-lg">
+        {currentItems.map((item,index) => (
+          <div key={index} className="border p-4 rounded shadow-lg">
 
             <Link to={`/ViewItem/${item._id}`}>
             <div className="relative">
@@ -212,7 +216,7 @@ const AllProductList = () => {
       </div>
 
       {/* Pagination */}
-      <section className="justify-end mt-4 flex">
+      <section className="lg:justify-end mt-8 lg:mt-8 flex justify-center">
         <Pagination
           current={currentPage}
           pageSize={itemsPerPage}

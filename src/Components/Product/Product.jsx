@@ -120,10 +120,10 @@ const Product = () => {
           try {
             const response = await axios.get(`${API_URL}/api/items`); // Fetch data from API
             setItemsData(response.data); // Set the fetched data
-            setLoading(false); // Disable loading once data is fetched
+            // setLoading(false); // Disable loading once data is fetched
           } catch (error) {
             console.error("Error fetching items:", error);
-            setLoading(false); // Disable loading in case of error
+            // setLoading(false); // Disable loading in case of error
           }
         };
         
@@ -149,8 +149,8 @@ const Product = () => {
 
             {/* Product Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {filteredItems.map((item) => (
-                    <div key={item.id} className="border p-4 rounded shadow-lg">
+                {filteredItems.map((item,index) => (
+                    <div key={index} className="border p-4 rounded shadow-lg">
 
                         <Link to={`/ViewItem/${item._id}`}>
                         <div className="relative">
